@@ -1,7 +1,7 @@
 import { ESLintUtils } from "@typescript-eslint/utils";
 
 const createRule = ESLintUtils.RuleCreator(
-  () => `https://ts-monorepo-starter.vercel.app/docs/eslint`
+  () => `https://acme-corp-lib.vercel.app/docs/eslint`
 );
 
 const ALLOWED_IMPORTS = ["Prisma", "PrismaClient"];

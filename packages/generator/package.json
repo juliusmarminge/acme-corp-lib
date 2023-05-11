@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/juliusmarminge/ts-monorepo-starter",
+    "url": "https://github.com/juliusmarminge/acme-corp-lib",
     "directory": "packages/generator"
   },
   "bin": {

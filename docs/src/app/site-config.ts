@@ -17,6 +17,11 @@ export const siteConfig = {
           href: "/docs/introduction",
           items: [],
         },
+        {
+          title: "Release",
+          href: "/docs/release",
+          items: [],
+        },
       ],
     },
     {
@@ -37,7 +42,7 @@ export const siteConfig = {
   ],
   links: {
     twitter: "https://twitter.com/jullerino",
-    github: "https://github.com/ts-monorepo-starter",
+    github: "https://github.com/acme-corp-lib",
     docs: "/docs",
   },
 };

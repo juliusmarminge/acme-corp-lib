@@ -42,9 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [
-      { url: "https://ts-monorepo-starter.vercel.app/opengraph-image.png" },
-    ],
+    images: [{ url: "https://acme-corp-lib.vercel.app/opengraph-image.png" }],
     creator: "@jullerino",
   },
 };
