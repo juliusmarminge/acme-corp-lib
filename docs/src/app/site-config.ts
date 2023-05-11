@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "TS Monorepo Starter",
+  name: "Acme Corp Lib",
   description:
     "The perfect starter template for your next TypeScript library. Batteries included powered by PNPM Workspaces, Turborepo, tsup & Changesets.",
   mainNav: [
