@@ -48,13 +48,13 @@ jobs:
       # Using custom token `MY_GITHUB_TOKEN` with more access to avoid rate limiting
       - name: Create Release
         id: changeset
-        uses: changesets/action@v1.4.1
+        uses: changesets/action@v1.4.4
         with:
           commit: "chore(release): 📦 version packages"
           title: "chore(release): 📦  version packages"
           publish: npx changeset publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Changeset has some issues with pnpm so we sync it up manually
