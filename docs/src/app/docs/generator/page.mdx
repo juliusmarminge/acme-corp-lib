@@ -2,6 +2,8 @@
 
 It turns out Prisma doesn't treeshake very well, so your prisma client (20kB compressed) is being imported everytime you use an enum. They also cannot be imported on the client as the prisma client will throw errors there.
 
+> See related issue [on GitHub](https://github.com/prisma/prisma/issues/13567#issuecomment-1332030096).
+
 That's where this generator comes in. It pulls out all your enums into a separate file which you can import without the prisma client being "leaked" in. This means you can use enums on the client in for example shared validation schemas both on the server and client, as well as reducing your overall bundle size by not allowing the prisma client to leak in to the bundle unnecessarily.
 
 ## Installation
