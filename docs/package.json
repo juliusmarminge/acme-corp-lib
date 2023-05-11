@@ -1,5 +1,5 @@
 {
-  "name": "@prisma-enum-generator/docs",
+  "name": "@prisma-enums/docs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
