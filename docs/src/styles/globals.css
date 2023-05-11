@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-8 h-8 bg-accent font-cal rounded-full font-medium text-center text-base inline-flex items-center justify-center -indent-px;
+    @apply ml-[-41px];
+    content: counter(step);
+  }
+}
+
+@layer components {
+  /* Hamburger menu icon animation */
+
+  .hamburger svg g {
+    @apply origin-center;
+    transition: transform 0.1s ease-in-out;
+  }
+  .hamburger svg path {
+    @apply opacity-100;
+    transition: transform 0.1s ease-in-out 0.1s, opacity 0.1s ease-in-out;
+  }
+  .hamburger svg.open path {
+    transition: transform 0.1s ease-in-out, opacity 0s ease-in-out;
+  }
+  .hamburger svg.open g {
+    transition: transform 0.1s ease-in-out 0.1s;
+  }
+  .hamburger svg.open > path {
+    @apply opacity-0;
+  }
+  .hamburger svg.open > g:nth-of-type(1) {
+    @apply rotate-45;
+  }
+  .hamburger svg.open > g:nth-of-type(1) path {
+    transform: translate3d(0, 6px, 0);
+  }
+  .hamburger svg.open > g:nth-of-type(2) {
+    @apply -rotate-45;
+  }
+  .hamburger svg.open > g:nth-of-type(2) path {
+    transform: translate3d(0, -6px, 0);
+  }
+
+  pre > code {
+    counter-reset: line;
+    padding: unset !important;
+  }
+
+  pre > code > .line::before {
+    counter-increment: line;
+    content: counter(line);
+
+    /* Other styling */
+    display: inline-block;
+    width: 1rem;
+    margin-right: 1rem;
+    text-align: right;
+    color: var(--muted-foreground);
+  }
+
+  [data-rehype-pretty-code-fragment] {
+    @apply relative;
+  }
+
+  [data-language-icon] {
+    @apply hidden;
+  }
+
+  [data-rehype-pretty-code-title] {
+    padding: 0.75rem 0 0.75rem 2.5rem;
+    @apply mt-4 rounded-t-lg border border-b-0 bg-accent font-cal;
+  }
+
+  [data-rehype-pretty-code-title]:has(+ [data-language-icon]) {
+    @apply pl-12;
+  }
+
+  [data-rehype-pretty-code-title] ~ pre {
+    @apply mt-0 rounded-t-none;
+  }
+
+  [data-rehype-pretty-code-title] ~ [data-language-icon][data-theme="light"] {
+    @apply block dark:hidden;
+  }
+
+  [data-rehype-pretty-code-title] ~ [data-language-icon][data-theme="dark"] {
+    @apply hidden dark:block;
+  }
+
+  [data-theme="light"]:not([data-language-icon]) {
+    @apply block dark:hidden;
+  }
+
+  [data-theme="dark"]:not([data-language-icon]) {
+    @apply hidden dark:block;
+  }
+}
+
+[data-rehype-pretty-code-fragment] .line--highlighted {
+  @apply rounded p-1  bg-muted-foreground/40;
+}
+[data-rehype-pretty-code-fragment] .word {
+  @apply rounded p-1  bg-muted-foreground/40;
+}
