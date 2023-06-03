@@ -2,13 +2,16 @@
   "compilerOptions": {
     /* LANGUAGE COMPILATION OPTIONS */
     "target": "ES2020",
-    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2020"
+    ],
     "module": "Node16",
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true,
-
     /* EMIT RULES */
     "outDir": "./dist",
     "noEmit": true, // TSUP takes care of emitting js for us, in a MUCH faster way
@@ -16,7 +19,6 @@
     "declarationMap": true,
     "sourceMap": true,
     "removeComments": true,
-
     /* TYPE CHECKING RULES */
     "strict": true,
     // "noImplicitAny": true, // Included in "Strict"
@@ -35,7 +37,6 @@
     // THE BELOW ARE EXTRA STRICT OPTIONS THAT SHOULD ONLY BY CONSIDERED IN VERY SAFE PROJECTS
     // "exactOptionalPropertyTypes": true, // TLDR - Setting to undefined is not the same as a property not being defined at all
     // "noPropertyAccessFromIndexSignature": true, // TLDR - Use dot notation for objects if youre sure it exists, use ['index'] notaion if unsure
-
     /* OTHER OPTIONS */
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -43,6 +44,9 @@
     // "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+    "types": [
+      "vitest/globals"
+    ]
   }
 }
