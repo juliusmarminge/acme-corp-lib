@@ -6,4 +6,4 @@ Also functioning as a prisma generator to reduce bundle sizes by a few megabytes
 
 ## Questions?
 
-<a href="https://cal.com/juliusm/quick-chat?utm_source=banner&utm_campaign=oss"><img alt="Book us with Cal.com" src="https://cal.com/book-with-cal-dark.svg" /></a>
+<a href="https://cal.com/julius/quick-chat?utm_source=banner&utm_campaign=oss"><img alt="Book us with Cal.com" src="https://cal.com/book-with-cal-dark.svg" /></a>
