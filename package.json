@@ -3,7 +3,7 @@
   "packageManager": "bun@1.0.26",
   "private": true,
   "type": "module",
-  "workspaces": ["examples/*", "packages/*"],
+  "workspaces": ["docs", "examples/*", "packages/*"],
   "scripts": {
     "build": "turbo --filter \"./packages/*\" build",
     "dev": "turbo --filter \"./packages/*\" dev",
