@@ -2,7 +2,10 @@
   "name": "@juliusmarminge/a",
   "version": "0.0.1",
   "type": "module",
-  "keywords": ["template", "monorepo"],
+  "keywords": [
+    "template",
+    "monorepo"
+  ],
   "author": "Julius Marminge",
   "license": "MIT",
   "repository": {
@@ -17,7 +20,12 @@
       "default": "./dist/index.js"
     }
   },
-  "files": ["dist", "package.json", "LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "rm -rf dist && bunchee",
     "dev": "bunhcee -w",
@@ -33,6 +41,6 @@
   },
   "devDependencies": {
     "bunchee": "^4.3.3",
-    "typescript": "^5.0.4"
+    "typescript": "^5.3.3"
   }
 }
