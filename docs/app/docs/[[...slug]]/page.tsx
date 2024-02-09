@@ -1,7 +1,7 @@
-import { getPage, getPages } from "@/app/source";
 import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getPage, getPages } from "~/app/source";
 
 export default async function Page({
   params,
@@ -10,9 +10,7 @@ export default async function Page({
 }) {
   const page = getPage(params.slug);
 
-  if (page == null) {
-    notFound();
-  }
+  if (page == null) notFound();
 
   const MDX = page.data.exports.default;
 

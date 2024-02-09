@@ -19,14 +19,13 @@
     "moduleResolution": "Bundler",
     "jsx": "preserve",
     "plugins": [
-      { "name": "next"
-      }
+      { "name": "next" }
     ],
     "incremental": true,
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./*"]
     }
   },
   "include": ["next-env.d.ts", "app", ".next/types/**/*.ts", "*.js", "tailwind.config.ts"],
