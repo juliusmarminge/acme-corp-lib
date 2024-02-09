@@ -1,0 +1,38 @@
+{
+  "name": "@juliusmarminge/a",
+  "version": "0.0.1",
+  "type": "module",
+  "keywords": ["template", "monorepo"],
+  "author": "Julius Marminge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliusmarminge/acme-corp-lib",
+    "directory": "packages/core"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "package.json", "LICENSE", "README.md"],
+  "scripts": {
+    "build": "rm -rf dist && bunchee",
+    "dev": "bunhcee -w",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "bunchee": "^4.3.3",
+    "typescript": "^5.0.4"
+  }
+}
