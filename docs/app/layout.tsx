@@ -2,22 +2,25 @@ import { RootProvider } from "fumadocs-ui/provider";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import type { ReactNode } from "react";
-import "~/app/global.css";
+import { twMerge } from "tailwind-merge";
 
-const inter = Inter({
-  subsets: ["latin"],
+import "~/app/global.css";
+import { siteConfig } from "~/app/source";
+
+const fontCal = localFont({
+  src: "./calsans.ttf",
+  variable: "--font-cal",
 });
 
 export const metadata = {
   metadataBase: new URL("https://timeit.jumr.dev"),
   title: {
-    default: "Time Reporting App",
-    template: "%s - Time Reporting App",
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
   },
-  description:
-    "An app for indie contractors to track time and generate invoices.",
+  description: siteConfig.description,
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-1e6x16.png",
@@ -34,13 +37,14 @@ export const viewport = {
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en">
       <body
-        className={[
+        className={twMerge(
           "min-h-screen font-sans antialiased",
+          fontCal.variable,
           GeistSans.variable,
           GeistMono.variable,
-        ].join(" ")}
+        )}
       >
         <RootProvider>{children}</RootProvider>
       </body>
